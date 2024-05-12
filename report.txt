@@ -1,0 +1,71 @@
+Employee Attrition Prediction Report
+
+1. Introduction
+
+Employee attrition is a significant challenge for organizations as it can lead to increased recruitment costs, loss of knowledge, and disruption of workflow. Predicting employee attrition can help organizations take proactive measures to retain valuable employees and maintain workforce stability. In this project, we aim to develop machine learning models to predict employee attrition using the IBM HR Analytics Employee Attrition & Performance dataset.
+
+2. Dataset Analysis and Preprocessing
+
+2.1. Dataset Description
+
+The dataset contains various attributes related to employee demographics, job roles, satisfaction levels, performance ratings, etc., along with a target variable indicating whether an employee has left the company (Yes or No).
+
+2.2. Dataset Features
+
+Age: Employee's age.
+Attrition: Target variable indicating whether the employee has left the company (Yes or No).
+BusinessTravel: Frequency of business travel.
+DailyRate: Daily rate of pay.
+Department: Department in which the employee works.
+DistanceFromHome: Distance from home to work.
+Education: Employee's level of education.
+EducationField: Field of education.
+EnvironmentSatisfaction: Satisfaction level with the work environment.
+JobInvolvement: Level of job involvement.
+JobLevel: Employee's job level.
+JobRole: Employee's job role.
+JobSatisfaction: Satisfaction level with the job.
+MonthlyIncome: Monthly income.
+MonthlyRate: Monthly rate of pay.
+NumCompaniesWorked: Number of companies the employee has worked for.
+OverTime: Whether the employee works overtime or not.
+PerformanceRating: Performance rating.
+RelationshipSatisfaction: Satisfaction level with work relationships.
+TotalWorkingYears: Total number of years worked.
+WorkLifeBalance: Work-life balance satisfaction level.
+YearsAtCompany: Number of years the employee has worked at the company.
+YearsInCurrentRole: Number of years in the current role.
+YearsSinceLastPromotion: Number of years since the last promotion.
+YearsWithCurrManager: Number of years with the current manager.
+2.3. Data Preprocessing
+
+Handling missing values.
+Encoding categorical variables.
+Scaling numerical features if necessary.
+3. Model Development
+
+3.1. Model Selection
+
+For this binary classification problem, we'll use the Random Forest Classifier.
+
+3.2. Model Implementation
+
+python
+Copy code
+# Random Forest Classifier
+rf_classifier = RandomForestClassifier(n_estimators=100, random_state=42)
+rf_classifier.fit(X_train_scaled, y_train)
+
+# Predictions
+y_pred = rf_classifier.predict(X_test_scaled)
+
+# Model Evaluation
+print("Accuracy:", accuracy_score(y_test, y_pred))
+print("Precision:", precision_score(y_test, y_pred))
+print("Recall:", recall_score(y_test, y_pred))
+print("F1-score:", f1_score(y_test, y_pred))
+print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
+print("Classification Report:\n", classification_report(y_test, y_pred))
+4. Model Evaluation and Optimization
+
+4.1. Model Performance
